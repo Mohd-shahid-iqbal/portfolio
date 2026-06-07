@@ -1,0 +1,20 @@
+{
+  "name": "myportfolio",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "start": "turbo dev",
+    "dev": "turbo dev --filter=portfolio",
+    "build": "turbo build",
+    "storybook": "turbo storybook --filter=@portfolio/ui",
+    "build-storybook": "turbo build-storybook --filter=@portfolio/ui",
+    "lint": "turbo lint"
+  },
+  "devDependencies": {
+    "turbo": "^2.3.3"
+  },
+  "packageManager": "npm@11.3.0",
+  "engines": {
+    "node": ">=18"
+  }
+}
