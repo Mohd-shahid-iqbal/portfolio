@@ -44,7 +44,8 @@ export default function Home() {
               <span className="text-slate-400 text-sm">Mohd Shahid Iqbal</span>
             </div>
             <p className="text-slate-600 text-xs">
-              Built with Next.js · Turborepo · Tailwind CSS · Framer Motion · Storybook
+              Built with Next.js · Turborepo · Tailwind CSS · Framer Motion ·
+              Storybook
             </p>
             <p className="text-slate-600 text-xs">
               © {new Date().getFullYear()} · All rights reserved

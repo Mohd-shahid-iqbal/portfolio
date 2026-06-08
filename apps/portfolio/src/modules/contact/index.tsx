@@ -5,13 +5,21 @@ import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
 
 export function ContactModule() {
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [formState, setFormState] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const subject = encodeURIComponent(`Portfolio Inquiry from ${formState.name}`);
-    const body = encodeURIComponent(`Hi Shahid,\n\n${formState.message}\n\nBest regards,\n${formState.name}\n${formState.email}`);
+    const subject = encodeURIComponent(
+      `Portfolio Inquiry from ${formState.name}`,
+    );
+    const body = encodeURIComponent(
+      `Hi Shahid,\n\n${formState.message}\n\nBest regards,\n${formState.name}\n${formState.email}`,
+    );
     window.open(`mailto:${personalInfo.email}?subject=${subject}&body=${body}`);
     setSubmitted(true);
     setTimeout(() => setSubmitted(false), 3000);
@@ -20,8 +28,18 @@ export function ContactModule() {
   const contactItems = [
     {
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          />
         </svg>
       ),
       label: "Email",
@@ -31,8 +49,18 @@ export function ContactModule() {
     },
     {
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+          />
         </svg>
       ),
       label: "Phone",
@@ -47,15 +75,29 @@ export function ContactModule() {
         </svg>
       ),
       label: "LinkedIn",
-      value: "linkedin.com/in/shahid",
+      value: "https://www.linkedin.com/in/mohd-shahid-iqbal-2b690713b",
       href: personalInfo.linkedin,
       color: "cyan",
     },
     {
       icon: (
-        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+        <svg
+          className="w-5 h-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1.5}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+          />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+          />
         </svg>
       ),
       label: "Location",
@@ -89,7 +131,8 @@ export function ContactModule() {
             Get In Touch
           </h2>
           <p className="text-slate-400 text-lg max-w-xl mx-auto">
-            Have a project in mind or want to discuss opportunities? I&apos;d love to hear from you.
+            Have a project in mind or want to discuss opportunities? I&apos;d
+            love to hear from you.
           </p>
         </motion.div>
 
@@ -115,10 +158,22 @@ export function ContactModule() {
                 </div>
                 <div>
                   <div className="text-slate-500 text-xs">{item.label}</div>
-                  <div className="text-white text-sm font-medium">{item.value}</div>
+                  <div className="text-white text-sm font-medium">
+                    {item.value}
+                  </div>
                 </div>
-                <svg className="w-4 h-4 text-slate-600 group-hover:text-slate-400 ml-auto transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="w-4 h-4 text-slate-600 group-hover:text-slate-400 ml-auto transition-colors"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth={2}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </a>
             ))}
@@ -127,10 +182,13 @@ export function ContactModule() {
             <div className="p-4 rounded-2xl border border-emerald-500/20 bg-emerald-500/5">
               <div className="flex items-center gap-2 mb-2">
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-emerald-400 font-semibold text-sm">Available for Work</span>
+                <span className="text-emerald-400 font-semibold text-sm">
+                  Available for Work
+                </span>
               </div>
               <p className="text-slate-400 text-xs">
-                Open to full-time roles, contract work, and exciting projects in the React/Frontend ecosystem.
+                Open to full-time roles, contract work, and exciting projects in
+                the React/Frontend ecosystem.
               </p>
             </div>
           </motion.div>
@@ -156,7 +214,9 @@ export function ContactModule() {
                     type="text"
                     required
                     value={formState.name}
-                    onChange={(e) => setFormState((s) => ({ ...s, name: e.target.value }))}
+                    onChange={(e) =>
+                      setFormState((s) => ({ ...s, name: e.target.value }))
+                    }
                     placeholder="John Doe"
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/10 transition-all text-sm"
                   />
@@ -169,7 +229,9 @@ export function ContactModule() {
                     type="email"
                     required
                     value={formState.email}
-                    onChange={(e) => setFormState((s) => ({ ...s, email: e.target.value }))}
+                    onChange={(e) =>
+                      setFormState((s) => ({ ...s, email: e.target.value }))
+                    }
                     placeholder="john@company.com"
                     className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/10 transition-all text-sm"
                   />
@@ -184,7 +246,9 @@ export function ContactModule() {
                   required
                   rows={5}
                   value={formState.message}
-                  onChange={(e) => setFormState((s) => ({ ...s, message: e.target.value }))}
+                  onChange={(e) =>
+                    setFormState((s) => ({ ...s, message: e.target.value }))
+                  }
                   placeholder="Tell me about your project or opportunity..."
                   className="w-full px-4 py-3 rounded-xl bg-white/8 border border-white/10 text-white placeholder-slate-600 focus:outline-none focus:border-indigo-500/60 focus:bg-white/10 transition-all text-sm resize-none"
                 />
@@ -193,20 +257,43 @@ export function ContactModule() {
               <button
                 type="submit"
                 className="w-full py-3.5 rounded-xl font-semibold text-white transition-all hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-indigo-500/20 flex items-center justify-center gap-2"
-                style={{ background: "linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)" }}
+                style={{
+                  background:
+                    "linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)",
+                }}
               >
                 {submitted ? (
                   <>
-                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M5 13l4 4L19 7"
+                      />
                     </svg>
                     Message Sent!
                   </>
                 ) : (
                   <>
                     Send Message
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={2.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
                     </svg>
                   </>
                 )}

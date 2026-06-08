@@ -35,7 +35,7 @@ function useTypewriter(texts: string[], speed = 80, pauseDuration = 2200) {
         setDisplay(current.slice(0, deleting ? charIdx - 1 : charIdx + 1));
         setCharIdx((c) => (deleting ? c - 1 : c + 1));
       },
-      deleting ? speed / 2 : speed
+      deleting ? speed / 2 : speed,
     );
 
     return () => clearTimeout(timeout);
@@ -128,7 +128,8 @@ export function HeroModule() {
           <span
             className="block"
             style={{
-              background: "linear-gradient(135deg, #6366f1 0%, #a78bfa 40%, #06b6d4 100%)",
+              background:
+                "linear-gradient(135deg, #6366f1 0%, #a78bfa 40%, #06b6d4 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -173,7 +174,9 @@ export function HeroModule() {
             href="#projects"
             onClick={(e) => {
               e.preventDefault();
-              document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+              document
+                .getElementById("projects")
+                ?.scrollIntoView({ behavior: "smooth" });
             }}
             className="group inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5 shadow-lg shadow-indigo-500/25"
             style={{
@@ -188,7 +191,11 @@ export function HeroModule() {
               stroke="currentColor"
               strokeWidth={2.5}
             >
-              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M17 8l4 4m0 0l-4 4m4-4H3"
+              />
             </svg>
           </a>
 
@@ -196,14 +203,24 @@ export function HeroModule() {
             href="mailto:khansaif59@gmail.com"
             className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-xl font-semibold text-white border border-white/20 bg-white/8 backdrop-blur-sm hover:bg-white/15 transition-all duration-200 hover:-translate-y-0.5"
           >
-            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              />
             </svg>
             Get In Touch
           </a>
 
           <a
-            href="https://linkedin.com/in/shahid"
+            href="https://www.linkedin.com/in/mohd-shahid-iqbal-2b690713b"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl text-slate-400 hover:text-white border border-white/10 hover:border-white/20 hover:bg-white/8 transition-all duration-200"
@@ -232,7 +249,8 @@ export function HeroModule() {
               <div
                 className="text-3xl font-black mb-1"
                 style={{
-                  background: "linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)",
+                  background:
+                    "linear-gradient(135deg, #6366f1, #8b5cf6, #06b6d4)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -240,8 +258,12 @@ export function HeroModule() {
               >
                 {stat.value}
               </div>
-              <div className="text-white font-semibold text-sm">{stat.label}</div>
-              <div className="text-slate-500 text-xs mt-0.5">{stat.description}</div>
+              <div className="text-white font-semibold text-sm">
+                {stat.label}
+              </div>
+              <div className="text-slate-500 text-xs mt-0.5">
+                {stat.description}
+              </div>
             </motion.div>
           ))}
         </motion.div>
@@ -254,7 +276,9 @@ export function HeroModule() {
         transition={{ delay: 1.5 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
-        <span className="text-xs text-slate-500 uppercase tracking-widest">Scroll</span>
+        <span className="text-xs text-slate-500 uppercase tracking-widest">
+          Scroll
+        </span>
         <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1">
           <motion.div
             animate={{ y: [0, 10, 0] }}

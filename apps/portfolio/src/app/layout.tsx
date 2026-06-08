@@ -16,6 +16,10 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+  },
   title: "Mohd Shahid Iqbal — Frontend Developer",
   description:
     "Distinguished Frontend Developer with 5+ years of experience in React, Next.js, Micro Frontends, and high-performance trading platforms. Available for exciting new opportunities.",
@@ -29,7 +33,12 @@ export const metadata: Metadata = {
     "New Delhi",
     "Mohd Shahid Iqbal",
   ],
-  authors: [{ name: "Mohd Shahid Iqbal", url: "https://linkedin.com/in/shahid" }],
+  authors: [
+    {
+      name: "Mohd Shahid Iqbal",
+      url: "https://www.linkedin.com/in/mohd-shahid-iqbal-2b690713b",
+    },
+  ],
   openGraph: {
     title: "Mohd Shahid Iqbal — Frontend Developer",
     description:
@@ -39,10 +48,17 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en" className={`${inter.variable} ${jetbrainsMono.variable}`}>
-      <body className={`${inter.className} bg-[#03040a] text-slate-100 antialiased`} suppressHydrationWarning>
+      <body
+        className={`${inter.className} bg-[#03040a] text-slate-100 antialiased`}
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
