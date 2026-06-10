@@ -1,7 +1,10 @@
 {
   "name": "myportfolio",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "start": "turbo dev",
     "dev": "turbo dev --filter=portfolio",
@@ -16,5 +19,17 @@
   "packageManager": "npm@11.3.0",
   "engines": {
     "node": ">=18"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

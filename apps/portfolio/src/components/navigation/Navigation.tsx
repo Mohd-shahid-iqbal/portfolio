@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#projects", label: "Projects" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
+  { href: "/blog", label: "Blog" },
 ];
 
 export function Navigation() {
@@ -38,6 +39,10 @@ export function Navigation() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false);
+    if (href.startsWith("/")) {
+      window.location.href = href;
+      return;
+    }
     const id = href.slice(1);
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
